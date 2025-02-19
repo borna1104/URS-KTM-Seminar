@@ -57,7 +57,6 @@ uint8_t sNum[5];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
-void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 void RC522_WriteRegister(uint8_t reg, uint8_t data);
 uint8_t RC522_ReadRegister(uint8_t reg);
