@@ -114,25 +114,25 @@ void LCD_SendByte(uint8_t data, uint8_t rs) {
 }
 void LCD_Init(void) {
     // Wait for LCD to power up
-    for (volatile int i = 0; i < 50000; i++);
+    for (int i = 0; i < 50000; i++);
 
     LCD_SendNibble(0x30, 0);  // Wake up
-    for (volatile int i = 0; i < 5000; i++);
+    for (int i = 0; i < 5000; i++);
 
     LCD_SendNibble(0x30, 0);
-    for (volatile int i = 0; i < 5000; i++);
+    for (int i = 0; i < 5000; i++);
 
     LCD_SendNibble(0x30, 0);
-    for (volatile int i = 0; i < 5000; i++);
+    for (int i = 0; i < 5000; i++);
 
     LCD_SendNibble(0x20, 0);  // Set 4-bit mode
-    for (volatile int i = 0; i < 5000; i++);
+    for (int i = 0; i < 5000; i++);
 
     LCD_SendByte(0x28, 0);  // Function set: 4-bit, 2-line, 5x8 font
     LCD_SendByte(0x0C, 0);  // Display ON, Cursor OFF
     LCD_SendByte(0x06, 0);  // Entry mode (move cursor right)
     LCD_SendByte(0x01, 0);  // Clear display
-    for (volatile int i = 0; i < 50000; i++);
+    for (int i = 0; i < 50000; i++);
 }
 /* USER CODE END 0 */
 
